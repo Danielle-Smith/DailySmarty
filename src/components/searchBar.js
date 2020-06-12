@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-
 import { withRouter } from 'react-router';
 
 class SearchBar extends Component {
     handleFormSubmit = function({query}) {
         console.log("try to handle submit query", query);
+        this.props.history.push('/results');
     }
 
     renderInput = (field) => {
@@ -27,5 +27,7 @@ class SearchBar extends Component {
 SearchBar = reduxForm({
     form: 'searchBar'
 })(SearchBar);
+
+SearchBar = withRouter(SearchBar);
 
 export default SearchBar;
