@@ -1,18 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import thunk from "redux-thunk";
+import React from "react"
+import ReactDOM from "react-dom"
+import { Provider } from "react-redux"
+import { createStore, applyMiddleware, compose } from "redux"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
+import thunk from "redux-thunk"
 
-import Home from "./components/home";
-import Results from "./components/results";
-import reducers from "./reducers";
+import Home from "./components/home"
+import Results from "./components/results"
+import reducers from "./reducers"
 
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)))
 
-import "./style/main.scss";
+import "./style/main.scss"
 
 
 function main() {
@@ -26,7 +26,7 @@ function main() {
       </BrowserRouter>
     </Provider>,
     document.querySelector(".app-wrapper")
-  );
+  )
 }
 
-document.addEventListener("DOMContentLoaded", main);
+document.addEventListener("DOMContentLoaded", main)
