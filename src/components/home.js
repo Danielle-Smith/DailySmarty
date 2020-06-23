@@ -7,7 +7,7 @@ import SearchBar from './searchBar';
 import RecentPosts from './recentPosts';
 
 class Home extends Component {
-  handleSearchBarSubmit = function(query) {
+  handleSearchBarSubmit(query) {
     this.props.fetchPostsWithQuery(query);
     this.props.history.push('/results');
   }
@@ -16,7 +16,7 @@ class Home extends Component {
     return (
       <div className="logo">
         <Logo />
-        <SearchBar onSubmit={(query) => this.handleSearchBarSubmit} />
+        <SearchBar onSubmit={(query) => this.handleSearchBarSubmit(query)} />
         <RecentPosts />
       </div>
     );

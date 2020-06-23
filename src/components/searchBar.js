@@ -5,7 +5,6 @@ import { withRouter } from 'react-router';
 class SearchBar extends Component {
     handleFormSubmit = function({query}) {
         this.props.onSubmit(query);
-        this.props.history.push('/results');
     }
 
     renderInput = (field) => {
@@ -13,7 +12,7 @@ class SearchBar extends Component {
     }
 
     render() {
-        const {handleSubmit} = this.props;
+        const { handleSubmit } = this.props;
         return(
             <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
                 <div>
