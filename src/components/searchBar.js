@@ -11,7 +11,7 @@ class SearchBar extends Component {
         return( 
             <div className="search-bar">
                 <div className="search-bar__wrapper">
-                    <input type="text" placeholder="Search DailySmarty" {...field.input} />
+                    <input type="text" placeholder="&#xf002; Search DailySmarty" {...field.input} />
                     <p>Press return to search</p>
                 </div>
             </div>
