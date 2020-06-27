@@ -8,22 +8,16 @@ class SearchBar extends Component {
     }
 
     renderInput = (field) => {
-        return( 
-            <div className="search-bar">
-                <div className="search-bar__wrapper">
-                    <input type="text" placeholder="&#xf002; Search DailySmarty" {...field.input} />
-                    <p>Press return to search</p>
-                </div>
-            </div>
-        )
+        return <input type="text" placeholder="&#xf002; Search DailySmarty" {...field.input} />
     }
 
     render() {
         const { handleSubmit } = this.props;
         return(
-            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-                <div>
+            <form className={`search-bar search-bar__${this.props.page}`} onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+                <div className="search-bar__wrapper">
                     <Field name="query" component={this.renderInput}/>
+                    <p>Press return to search</p>
                 </div>
             </form>
         )
