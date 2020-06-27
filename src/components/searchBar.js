@@ -8,7 +8,14 @@ class SearchBar extends Component {
     }
 
     renderInput = (field) => {
-        return <input type="text" placeholder="Search DailySmarty" {...field.input} />
+        return( 
+            <div className="search-bar">
+                <div className="search-bar__wrapper">
+                    <input type="text" placeholder="Search DailySmarty" {...field.input} />
+                    <p>Press return to search</p>
+                </div>
+            </div>
+        )
     }
 
     render() {
